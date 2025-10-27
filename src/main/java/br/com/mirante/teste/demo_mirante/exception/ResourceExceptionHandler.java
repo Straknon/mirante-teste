@@ -47,7 +47,7 @@ public class ResourceExceptionHandler {
 		StandardError err = new StandardError(System.currentTimeMillis(), HttpStatus.BAD_REQUEST.value(), messageList, req.getRequestURI());
 		
 		final String warnMessage = "[ConstraintViolationException] - ".concat(err.toString());
-		LOGGER.warn(warnMessage);
+		LOGGER.warn(warnMessage, e);
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(err);
 	}
 
@@ -58,7 +58,7 @@ public class ResourceExceptionHandler {
 		StandardError err = new StandardError(System.currentTimeMillis(), HttpStatus.BAD_REQUEST.value(), messagesList, req.getRequestURI());
 				
 		final String warnMessage = "[IllegalArgumentException] - ".concat(err.toString());
-		LOGGER.warn(warnMessage);
+		LOGGER.warn(warnMessage, e);
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(err);
 	}
 	
@@ -69,7 +69,7 @@ public class ResourceExceptionHandler {
 		StandardError err = new StandardError(System.currentTimeMillis(), HttpStatus.NOT_FOUND.value(), messagesList, req.getRequestURI());
 				
 		final String warnMessage = "[EventoException] - ".concat(err.toString());
-		LOGGER.warn(warnMessage);
+		LOGGER.warn(warnMessage, e);
 		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(err);
 	}
 
@@ -80,7 +80,7 @@ public class ResourceExceptionHandler {
 		StandardError err = new StandardError(System.currentTimeMillis(), HttpStatus.INTERNAL_SERVER_ERROR.value(), messagesList, req.getRequestURI());
 		
 		final String warnMessage = "[NullPointerException] - ".concat(err.toString());
-		LOGGER.warn(warnMessage);
+		LOGGER.warn(warnMessage, e);
 		return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(err);
 	}
 
