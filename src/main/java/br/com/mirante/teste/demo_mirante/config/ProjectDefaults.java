@@ -6,7 +6,7 @@ import org.springframework.http.MediaType;
 public class ProjectDefaults {
 	
 	//Geral
-	public static final String BASE_URL = "/demomirante/api/";
+	public static final String BASE_URL = "/api/";
 	public static final String CONSUMED_MEDIA_TYPE = MediaType.APPLICATION_JSON_VALUE ;
 	public static final String PRODUCED_MEDIA_TYPE = MediaType.APPLICATION_JSON_VALUE;
 	public static final String MESSAGE_EVENTO_NAO_ENCONTRADO = "Evento com esse id não foi encontrado";
