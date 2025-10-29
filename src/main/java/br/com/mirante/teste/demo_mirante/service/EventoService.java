@@ -33,6 +33,7 @@ public class EventoService {
 
     public EventoDTO save(@NotNull(message = MESSAGE_EVENTO_NAO_NULO) EventoDTO dto){
 		final Timestamp now = Timestamp.from(Instant.now());
+        dto.setId(null);
         dto.setCreatedAt(now);
         dto.setUpdatedAt(now);
 
